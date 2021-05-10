@@ -1,5 +1,31 @@
 extends ./layout/index
 block contenido
     main.container.mt-5 
-        .row 
-            h1= pagina
+        .row
+            .col-md-5 
+                img(src='img/nosotros.jpg' alt='Imagen sobre nosotros' class='img-fluid')
+            .col-md-7
+                h1= pagina
+                blockquote  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget dolor sapien.
+
+                p Integer dapibus, diam quis pulvinar tempor, sem libero sollicitudin lorem, at cursus purus metus ac nibh. Vivamus consequat velit sed turpis scelerisque maximus. Curabitur felis erat, tempus non purus vel, congue hendrerit magna. Duis pretium ut nisi nec mattis. In hac habitasse platea dictumst. Sed sollicitudin turpis enim, laoreet efficitur lectus rutrum eget. Pellentesque vehicula venenatis venenatis. Nunc quis finibus magna. Praesent non consequat arcu. Vestibulum porttitor rhoncus felis at placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean quam risus, mollis in consequat a, fermentum et quam.
+
+                p Proin gravida venenatis fermentum. Mauris eu ligula a metus sodales blandit. Suspendisse et libero sed leo scelerisque sollicitudin. In convallis velit vitae sodales interdum. Integer orci felis, faucibus id iaculis a, condimentum ac felis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris posuere ante eu laoreet placerat. Quisque quis pharetra lacus, ut ornare orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean placerat facilisis elit ac fringilla. Suspendisse at ante nunc.
+
+    .listado-iconos 
+        .container.mt-5.py-5.text-center 
+            .row 
+                .col-md-4 
+                    img(src="img/icono_seguridad.svg" alt="icono seguridad" class='img-fluid mb-4')
+                    h2.mb-4 Seguridad
+                    p Proin gravida venenatis fermentum. Mauris eu ligula a metus sodales blandit. Suspendisse et libero sed leo scelerisque sollicitudin. In convallis velit vitae sodales interdum.
+
+                .col-md-4 
+                    img(src="img/icono_destinos.svg" alt="icono destinos" class='img-fluid mb-4')
+                    h2.mb-4 Mejores Destinos
+                    p Proin gravida venenatis fermentum. Mauris eu ligula a metus sodales blandit. Suspendisse et libero sed leo scelerisque sollicitudin. In convallis velit vitae sodales interdum.    
+                
+                .col-md-4 
+                    img(src="img/icono_precios.svg" alt="icono precios" class='img-fluid mb-4')
+                    h2.mb-4 Mejores precios
+                    p Proin gravida venenatis fermentum. Mauris eu ligula a metus sodales blandit. Suspendisse et libero sed leo scelerisque sollicitudin. In convallis velit vitae sodales interdum.    
