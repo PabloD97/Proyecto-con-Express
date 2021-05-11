@@ -1,11 +1,18 @@
 // Version CommonJS
 // const express = require('express');
-
+// en la nueva version de Node tenemos que colocar la extension del archivo que deseamos importa
 import express from 'express';
-import router from './routes/index.js'; // en la nueva version de Node tenemos que colocar la extension del archivo que deseamos importa
-
+import router from './routes/index.js'; 
+import db from './config/db.js'
 
 const app = express();
+
+// Conectar la base de datos
+db.authenticate()
+    .then( ()=> {
+        console.log('Base de datos conectada')
+    })
+    .catch(error => console.log(error));
 
 // Definir puerto
 const port = process.env.PORT || 4000;
