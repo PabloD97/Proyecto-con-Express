@@ -1,12 +1,9 @@
 import express from 'express';
+import {paginaInicio} from '../controllers/paginasController.js'
 
 const router = express.Router();
 
-router.get('/', (request,response)=>{ // request - lo que enviamos : res - lo que express nos responde        
-    response.render('inicio',{
-        pagina: 'Inicio'
-    });
-});
+router.get('/', paginaInicio);
 
 router.get('/nosotros', (request,response)=>{ 
 
