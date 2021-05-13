@@ -1,0 +1,24 @@
+
+const guardarComentario = (request, response) => {
+
+    // Validar 
+
+    const errores = [];
+
+    const {nombre, correo,mensaje} = request.body;
+    if(nombre.trim() === ''){
+        errores.push({mensaje: 'El nombre esta vacio'})
+    }
+    if(correo.trim() === ''){
+        errores.push({mensaje: 'El correo esta vacio'})
+    }
+    if(mensaje.trim() === ''){
+        errores.push({mensaje: 'El mensaje esta vacio'})
+    }
+
+    console.log(errores)
+}
+
+export {
+    guardarComentario
+}
