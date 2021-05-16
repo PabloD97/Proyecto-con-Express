@@ -1,4 +1,4 @@
-import {Comentario} from '../models/Comentario.js'
+import {Comentario} from '../models/Comentarios.js'
 
 const guardarComentario = async (request, response) => {
 
@@ -18,13 +18,15 @@ const guardarComentario = async (request, response) => {
     }
 
     if(errores.length > 0){
+        const testimoniales = await Comentario.findAll();
         //Con que alla un error, vamos a mostrar los errores
         response.render('testimoniales', {
             pagina: 'Testimoniales',
             errores,
             nombre,
             correo,
-            mensaje
+            mensaje,
+            testimoniales
         })
     } else {
         //Almacenar en la db

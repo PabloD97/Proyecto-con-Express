@@ -1,4 +1,5 @@
 import {Viaje} from '../models/Viaje.js'
+import {Comentario} from '../models/Comentarios.js'
 
 const paginaInicio = (request,response)=>{ // request - lo que enviamos : res - lo que express nos responde        
     response.render('inicio',{
@@ -25,11 +26,19 @@ const paginaViajes = async (request,response)=>{
     });
 }
 
-const paginaTestimoniales =  (request,response)=>{ 
+const paginaTestimoniales = async (request,response)=>{ 
 
-    response.render('testimoniales',{
-        pagina: 'Testimoniales'
-    });
+    try {
+        const testimoniales = await Comentario.findAll();
+
+        response.render('testimoniales',{
+            pagina: 'Testimoniales',
+            testimoniales
+        });    
+    } catch (error) {
+        console.log(error);
+    }
+    
 }
 
 // Muestra un viaje por su slug
