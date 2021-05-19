@@ -4,12 +4,18 @@ import {Comentario} from '../models/Comentarios.js'
 const paginaInicio = async (request,response)=>{ // request - lo que enviamos : res - lo que express nos responde        
     
     // consultar 3 viajes del modelo Viaje
+    const promisedDB = [];
+    promisedDB.push(Viaje.findAll({limit: 3}));
+    promisedDB.push(Comentario.findAll({limit: 3}));
+
     try {
-        const viajes = await Viaje.findAll({limit: 3})
+        const resultado = await Promise.all(promisedDB);
+
         response.render('inicio',{
             pagina: 'Inicio',
             clase: 'home',
-            viajes
+            viajes: resultado[0],
+            testimoniales: resultado[1]
         });
     
     } catch (error) {
