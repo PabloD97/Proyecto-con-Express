@@ -4,7 +4,8 @@
   "description": "Primer Proyecto con Node.js",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "type": "module",
   "author": "Pablo Diaz",
@@ -16,11 +17,17 @@
     "sequelize": "^6.6.2"
   },
   "devDependencies": {
+    "dotenv": "^9.0.2",
     "nodemon": "^2.0.7"
   },
-  " bin " : " index.js " ,
- " pkg " : {
-     " scripts " : [ " node_modules / tedious / lib / tedious.js " , " modelos / *. js " ],
-     " assets " : [ " config / log .json " ]
+  " bin ": " index.js ",
+  " pkg ": {
+    " scripts ": [
+      " node_modules / tedious / lib / tedious.js ",
+      " modelos / *. js "
+    ],
+    " assets ": [
+      " config / log .json "
+    ]
   }
 }
