@@ -1,10 +1,20 @@
 import {Viaje} from '../models/Viaje.js'
 import {Comentario} from '../models/Comentarios.js'
 
-const paginaInicio = (request,response)=>{ // request - lo que enviamos : res - lo que express nos responde        
-    response.render('inicio',{
-        pagina: 'Inicio'
-    });
+const paginaInicio = async (request,response)=>{ // request - lo que enviamos : res - lo que express nos responde        
+    
+    // consultar 3 viajes del modelo Viaje
+    try {
+        const viajes = await Viaje.findAll({limit: 3})
+        response.render('inicio',{
+            pagina: 'Inicio',
+            clase: 'home',
+            viajes
+        });
+    
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 const paginaNosotros = (request,response)=>{ 
